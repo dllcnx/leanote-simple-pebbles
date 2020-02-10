@@ -1,0 +1,34 @@
+{{range $.posts}}
+	<div class="each-post">
+		<div class="title">
+			<a href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">
+				{{.Title}}
+			</a>
+		</div>
+		<div class="created-time">
+			<i class="fa fa-bookmark-o"></i>
+			{{if .Tags}} 
+				{{blogTags $ .Tags}}
+				&nbsp;&nbsp;
+			{{end}}
+			
+			<i class="fa fa-clock-o"></i> {{.PublicTime | datetime}} 
+			&nbsp;&nbsp;
+			<span class="fa fa-eye"></span> {{.ReadNum}}
+			&nbsp;&nbsp;
+			<span class="fa fa-thumbs-o-up"></span> {{.LikeNum}}
+			<!--&nbsp;&nbsp;-->
+			<!--<span class="fa fa-comments-o"></span> {{.CommentNum}}-->
+		</div>
+		<div class="desc">
+			{{.Desc | raw}}
+		</div>
+		<div id="moreContainer">
+		    <a class="more" href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">查看</a>
+        </div>	
+	</div>
+{{else}}
+<div class="each-post">
+无
+</div>
+{{end}}
