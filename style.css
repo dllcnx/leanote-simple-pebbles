@@ -4,12 +4,12 @@
 #content *, .desc * {
   /*font-size: 18px;*/
   /*llcn*/
-   font-size: 14px;
+  font-size: 14px;
   line-height: 30px;
 }
 .desc pre * {
-    font-size: 16px;
-    /*line-height: 24px;*/
+  font-size: 16px;
+  /*line-height: 24px;*/
 }
 #content h1, .desc h1 {
   font-size: 30px;
@@ -24,17 +24,17 @@
   font-size: 14px;
 }
 .input-group-addon {
-    background: none;
+  background: none;
 }
 #searchInput {
-    border: none;
-    outline: none;
-    box-shadow: none;
-    border-bottom: 1px solid #ccc;
-    background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-bottom: 1px solid #ccc;
+  background: none;
 }
 .input-group-addon {
-    border: none;
+  border: none;
 }
 @-webkit-keyframes dropdown {
   0% {
@@ -226,9 +226,9 @@ ul.dropdown-menu {
   margin: auto !important;
 }
 .footer-leanote {
-    text-align: center;
-    padding: 5px 0;
-    font-size: 12px;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 12px;
 }
 
 .navbar-brand {
@@ -262,23 +262,23 @@ ul.dropdown-menu {
 }
 
 body {
-    /* font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    */font-family: "Libre Baskerville", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "wenquanyi micro hei", sans-serif, "Apple Color Emoji";
-    
-    font-weight: 300;
-    font-size: 16px;
-    word-wrap: break-word;
-   /* -webkit-font-smoothing: antialiased;*/
+  /* font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  */font-family: "Libre Baskerville", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "wenquanyi micro hei", sans-serif, "Apple Color Emoji";
+
+  font-weight: 300;
+  font-size: 16px;
+  word-wrap: break-word;
+  /* -webkit-font-smoothing: antialiased;*/
 }
 h1,
 h2,
 h3, h4 {
- /*font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
-    */font-family: "Libre Baskerville", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "wenquanyi micro hei", sans-serif, "Apple Color Emoji";
-    font-weight: bold;
+  /*font-family: 'Open Sans', 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;
+     */font-family: "Libre Baskerville", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "wenquanyi micro hei", sans-serif, "Apple Color Emoji";
+  font-weight: bold;
 }
 pre, pre *{
-    font-size: 14px;
+  font-size: 14px;
 }
 body div:last-child, body p:last-child, body blockquote:last-child, body pre:last-child, body ul:last-child, body ol:last-child, body table:last-child, body figure:last-child, body section:last-child, body article:last-child, body header:last-child, body footer:last-child {
   margin-bottom: 0;
@@ -290,10 +290,10 @@ a:hover {
   text-decoration: none !important;
 }
 .nav > li {
-    text-align: center;
+  text-align: center;
 }
 #headerAndNav {
-   position: fixed;
+  position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
@@ -309,7 +309,7 @@ a:hover {
   color: #fff;
 }
 #headerAndNav * {
-    /*color: #fff;*/
+  /*color: #fff;*/
 }
 #headerContainer {
   width: 100%;
@@ -346,30 +346,34 @@ a:hover {
   display: block;
 }
 #header h1 .blog-logo {
-    height: 90px;
-    width: 90px;
-    line-height: 90px;
-    overflow: hidden;
-    border-radius: 50%;
-    margin: auto;
-    border: 1px solid #eee;
-    background: #fff;
+  height: 90px;
+  width: 90px;
+  line-height: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+  border: 1px solid #eee;
+  background: #fff;
 }
 #header h1 .blog-logo img {
-    width: 90px;
-    display: inline-block;
-    vertical-align: top;
+  width: 90px;
+  display: inline-block;
+  vertical-align: top;
 }
 #header h1 a div {
-    font-size: 24px;
-    margin-top: 10px;
-    font-weight: bold;
+  font-size: 24px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #fff;
 }
 #header #blogDesc {
   margin-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #ebeff2;
   font-size: 16px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: #fff;
 }
 #logo {
   word-wrap: break-word;
@@ -400,11 +404,18 @@ a:hover {
 .navbar-nav > li {
   float: none;
 }
+.navbar-default .navbar-nav > li > a {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #428bca;
+}
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   font-weight: bold;
   background: none;
+  color: #428bca;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -635,75 +646,75 @@ a:hover {
   .tab-content {
     padding: 0 10px;
   }
-  
-   #footerContainer,
+
+  #footerContainer,
   #footerContainer #footer a {
-      color: #000;
+    color: #000;
   }
-  
+
   #headerContainer {
-      background: transparent;
+    background: transparent;
   }
-  
+
 }
 
 .desc *, #content * {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* 表格 */
 
 table {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 table th, table td {
-    padding: 6px 13px;
-    border: 1px solid #ddd;
+  padding: 6px 13px;
+  border: 1px solid #ddd;
 }
 table th {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 table tr {
-    background-color: none;
-    border-top: 1px solid #ccc;
+  background-color: none;
+  border-top: 1px solid #ccc;
 }
 table tr:nth-child(2n) {
-    background-color: rgb(247, 247, 249);
+  background-color: rgb(247, 247, 249);
 }
 .mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption {
-	border: 1px solid #ddd;
-	border-collapse: collapse;
-	padding: 6px 13px;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  padding: 6px 13px;
 }
 
 pre { word-break: normal;word-wrap: normal;overflow: scroll; }
 
 /*//cn*/
 .llcn-footer{
-    text-align: center;
+  text-align: center;
 }
 .llcn-footer ul{
-   padding-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 #blogNav{
-    right: 10px  !important;
+  right: 10px  !important;
 }
 #blogNavContent{
-    background: #333333;
-    padding: 10px;
-    position: absolute;
-    right: 0px;
-    min-width: 300px;
-    color: #fff;
+  background: #333333;
+  padding: 10px;
+  position: absolute;
+  right: 0px;
+  min-width: 300px;
+  color: #fff;
 }
 
 #blogNav a{
-    color: #fff;
-    font-size: 14px;
+  color: #fff;
+  font-size: 14px;
 }
 
 .desc{
-    font-size: 14px;
+  font-size: 14px;
 }

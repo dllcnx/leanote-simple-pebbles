@@ -26,7 +26,7 @@
 {{else if $.curIsArchive}}
 	归档
 {{end}}
-    
+
 </title>
 <!-- Bootstrap core CSS -->
 <link href="{{$.bootstrapCssUrl}}" rel="stylesheet">
@@ -50,7 +50,7 @@ function log(o) {
 	<div id="headerContainer" class="container">
 		<!-- 头部可放博客名, 导航 -->
 		<div id="header">
-		
+
 			{{$username := .userInfo.Username}}
 			<h1>
 				<a href="{{$.indexUrl}}" id="logo">
@@ -69,7 +69,7 @@ function log(o) {
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Static navbar -->
 	<div class="navbar navbar-default">
 	  <div class="container">
@@ -85,27 +85,21 @@ function log(o) {
 			    <img src="{{$.blogInfo.Logo}}" title="{{$.blogInfo.Title}}"/>
 			{{end}}
 			{{$.blogInfo.Title | raw}}
-		
+
 	      </a>
 	    </div>
 	    <div class="navbar-collapse collapse">
 	      <ul class="nav navbar-nav">
-	      	
+
 	    	<li class="{{if $.curIsIndex}}active{{end}}"><a href="{{.indexUrl}}">主页</a></li>
 		    <!-- 分类页 -->
 		   	{{range $.cates}}
 				<li class="{{if eq .CateId $.curCateId}}active{{end}}">
-					<a href="{{$.cateUrl}}/{{.UrlTitle}}" 
+					<a href="{{$.cateUrl}}/{{.UrlTitle}}"
 					>{{.Title}}</a>
 				</li>
 			{{end}}
-			<!-- 单页 -->
-			{{range $.singles}}
-			    <li class="{{if eq $.curSingleId .SingleId}}active{{end}}">
-					<a href="{{$.singleUrl}}/{{.UrlTitle}}">{{.Title}}</a>
-				</li>
-			{{end}}
-			
+
 			<!-- 归档 -->
 			<li class="{{if $.curIsArchive}}active{{end}}">
 				<a href="{{$.archiveUrl}}">归档</a>
@@ -113,7 +107,13 @@ function log(o) {
 			<li class="{{if $.curIsTags}}active{{end}}">
 				<a href="{{$.tagsUrl}}">标签</a>
 			</li>
-			
+
+			  <!-- 单页 -->
+			  {{range $.singles}}
+			  <li class="{{if eq $.curSingleId .SingleId}}active{{end}}">
+				  <a href="{{$.singleUrl}}/{{.UrlTitle}}">{{.Title}}</a>
+			  </li>
+			  {{end}}
 	      </ul>
 	      <form class="navbar-form navbar-right" id="search" onsubmit="search(event);return false;">
 	      	<div class="input-group">

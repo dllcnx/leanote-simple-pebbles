@@ -51,7 +51,7 @@
 				[[if IsAuthorComment]]
 				<span>(作者)</span>
 				[[/if]]
-				
+
 				<!-- 回复其它人 -->
 				[[if ToUserInfo]]
 					<span class="in-reply-to">
@@ -69,7 +69,7 @@
 			<div class="comment-ft clearfix" data-comment-id="[[:CommentId]]" >
 				<span title="" ui-time="" class="date">[[:PublishDate]] </span>
 				<span class="like-num [[if !LikeNum]]hide[[/if]]" title="[[:LikeNum]] 赞"><span class="like-num-i">[[:LikeNum]]</span> 赞</span></span>
-				
+
 				[[if ~root.visitUserInfo.UserId]]
 					[[if IsMyNote && !IsMyComment]]
 						<a href="javascript:;" class="comment-trash op-link "><i class="fa fa-trash"></i> 删除</a>
@@ -85,7 +85,7 @@
 					[[/if]]
 				[[/if]]
 			</div>
-			
+
 			<!-- 回复该评论 -->
 			[[if ~root.visitUserInfo.UserId]]
 			<form class="comment-form comment-box-ft">
@@ -97,7 +97,7 @@
 						<textarea class="editable" id="commentContent" name="commentContent" placeholder="回复"></textarea>
 					</div>
 				</div>
-				
+
 				<div class="command clearfix" style="display: block;">
 					<button class="reply-comment-btn save btn btn-primary" data-comment-id="[[:CommentId]]">提交评论</button>
 					<a class="cancel reply-cancel btn-link">取消</a>
@@ -150,9 +150,9 @@
 {{end}}
 <!-- //gittalk -->
 {{if and $.blogInfo.OpenComment (eq $.blogInfo.CommentType "disqus")}}
-  <script src="{{$.themeBaseUrl}}/md5.js"></script>
-  <link rel="stylesheet" href="{{$.themeBaseUrl}}/gitalk.css">
-  <script src="{{$.themeBaseUrl}}/gitalk.min.js"></script>
+  <script src="{{$.themeBaseUrl}}/lib/md5.js"></script>
+  <link rel="stylesheet" href="{{$.themeBaseUrl}}/lib/gitalk.css">
+  <script src="{{$.themeBaseUrl}}/lib/gitalk.min.js"></script>
 <div id="gitalk-container"></div>
 <script>
     const name = {{.post.Title}}+{{.post.CreatedTime}}
@@ -175,4 +175,4 @@
 
     gitalk.render('gitalk-container')
 </script>
-{{end}}	
+{{end}}

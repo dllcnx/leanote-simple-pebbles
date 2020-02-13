@@ -10,13 +10,7 @@
 				<a href="{{$.cateUrl}}/{{.UrlTitle}}">{{.Title}}</a>
 			</li>
 			{{end}}
-			<!-- 单页 -->
-			{{range $.singles}}
-			    <li class="{{if eq $.curSingleId .SingleId}}active{{end}}">
-					<a href="{{$.singleUrl}}/{{.UrlTitle}}">{{.Title}}</a>
-				</li>
-			{{end}}
-			
+
 			<!-- 归档 -->
 			<li class="{{if $.curIsArchive}}active{{end}}">
 				<a href="{{$.archiveUrl}}">归档</a>
@@ -24,6 +18,13 @@
 			<li class="{{if $.curIsTags}}active{{end}}">
 				<a href="{{$.tagsUrl}}">标签</a>
 			</li>
+
+			  <!-- 单页 -->
+			  {{range $.singles}}
+			  <li class="{{if eq $.curSingleId .SingleId}}active{{end}}">
+				  <a href="{{$.singleUrl}}/{{.UrlTitle}}">{{.Title}}</a>
+			  </li>
+			  {{end}}
           </ul>
         </div>
         <div class="col-md-4 llcn-footer">
@@ -64,7 +65,7 @@ function search(e) {
 		var $tpl = $(tpl);
 		$('body').append($tpl)
 		$tpl.submit();
-		$tpl.remove(); 
+		$tpl.remove();
 	}
 }
 </script>

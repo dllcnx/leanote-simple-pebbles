@@ -3,7 +3,7 @@
 其中Name, Version, Author, AuthorUrl是必填项(注意首字大写)
 你也可以定义其它的配置, 如FriendLinks, 在模板文件使用 $.themeInfo.FriendLinks来获取值
 
-注意: 
+注意:
 1) JSON语法严格, 键必须用双引号, 最后不得有空','来结尾
 2) 以下配置不能包含任何注释, 不然解析会出错!
 
@@ -21,23 +21,33 @@
   repo  用来存储评论的仓库名
   owner 管理员
   admin 谁可以初始化仓库，是个数组，一般填写管理员就行了
+* music 音乐单页
+    name	-	音频名称
+    artist	-	音频艺术家
+    url	-	音频链接
+    cover	-	音频封面
+    lrc	-	歌词详情
+    theme	-	切换到此音频时的主题色，比上面的 theme 优先级高
 */
 {
-    "Name": "dllcn-simple-pebbles",
-    "Version": "1.0",
-    "Author": "myllcn.com",
-    "AuthorUrl": "http://myllcn.com",
-    "FriendLinks": [
-        {"Title": "我的官网", "Url": "http://myllcn.com"},
-        {"Title": "我的博客", "Url": "http://blog.myllcn.com"},
-        {"Title": "npm", "Url": "https://www.npmjs.com/~jkf19980216"},
-        {"Title": "Github", "Url": "https://github.com/KeiferJu"}
-    ],
-     "gitalk": {
-        "clientID": "xxx",
-        "clientSecret": "xxx",
-        "repo": "xxx",
-        "owner": "xxx",
-        "admin": ["xxx"]
-    }
+  "Name": "dllcn-simple-pebbles",
+  "Version": "1.0",
+  "Author": "myllcn.com",
+  "AuthorUrl": "http://myllcn.com",
+  "FriendLinks": [
+    {"Title": "我的官网", "Url": "http://myllcn.com"},
+    {"Title": "我的博客", "Url": "http://blog.myllcn.com"},
+    {"Title": "npm", "Url": "https://www.npmjs.com/~jkf19980216"},
+    {"Title": "Github", "Url": "https://github.com/KeiferJu"}
+  ],
+  "gitalk": {
+    "clientID": "xxx",
+    "clientSecret": "xxx",
+    "repo": "xxx",
+    "owner": "xxx",
+    "admin": ["xxx"]
+  },
+  "music": [
+    {"name":"RightNow","artist":"RightNow","url":"http://blog.myllcn.com/music/RightNow.mp3","cover":""}
+  ]
 }

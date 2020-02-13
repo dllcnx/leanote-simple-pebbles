@@ -7,27 +7,31 @@
 				{{.single.Title}}
 			</div>
 			<div class="created-time">
-				<i class="fa fa-clock-o"></i> {{$.single.UpdatedTime | datetime}} 
+				<i class="fa fa-clock-o"></i> {{$.single.UpdatedTime | datetime}}
 			</div>
-			
+
 			<!-- 仅为移动端 -->
 			<div class="mobile-created-time">
-			{{ if $.blogInfo.UserLogo}}
+				{{ if $.blogInfo.UserLogo}}
 				<img src="{{$.blogInfo.UserLogo}}" id="userLogo">
-			{{else}}
+				{{else}}
 				<img src="{{$.siteUrl}}/images/blog/default_avatar.png" id="userLogo">
-			{{end}}
-			{{$.blogInfo.Username}}
+				{{end}}
+				{{$.blogInfo.Username}}
 			</div>
-			
 			<div class="desc" id="content">
-					{{$.single.Content | raw}}
+				{{$.single.Content | raw}}
 			</div>
+
+			{{if and $.themeInfo.music (eq $.single.UrlTitle "music")}}
+			<div id="aplayer"></div>
+			{{end}}
 		</div>
 	</div>
 </div>
 
 </div>
+
 {{template "footer.html" $}}
 
 {{template "highlight.html" $}}
@@ -44,10 +48,21 @@
 <!-- 一些公用的js -->
 <script src="{{$.leanoteUrl}}/public/blog/js/common.js"></script>
 <script>
-$(function() {
-	initNav();
-});
+	$(function() {
+		initNav();
+	});
 </script>
-
+<!-- //aplayer -->
+{{if and $.themeInfo.music (eq $.single.UrlTitle "music")}}
+<link rel="stylesheet" href="{{$.themeBaseUrl}}/lib/Aplayer.min.css">
+<script src="{{$.themeBaseUrl}}/lib/Aplayer.min.js"></script>
+<script>
+	const ap = new APlayer({
+		container: document.getElementById('aplayer'),
+		autoplay: true,
+		audio: {{$.themeInfo.music}}
+	});
+</script>
+{{end}}
 </body>
 </html>
