@@ -1,6 +1,6 @@
 # leanote-simple-pebbles
 
-[观看效果](http://note.myllcn.com/preview?themeId=5e477b63c8b2ff000c000069)
+[观看效果](http://weblog.myllcn.com/)
 
 根据官方主题市场生活的simple-pebbles进行修改，原主题字体大小等等都进行太大，总感觉不舒服，进行了样式微调。替换了官方disqus评论系统为gittalk，因为一些原因，Disqus国内无法使用，但是又懒得去翻，就用了基于git的gittalk。
 
