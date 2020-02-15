@@ -5,26 +5,25 @@
 				{{.Title}}
 			</a>
 		</div>
+		
 		<div class="created-time">
-			{{if .Tags}}
-				<i class="fa fa-bookmark-o"></i>
-				{{blogTags $ .Tags}}
-				&nbsp;&nbsp;
-			{{end}}
+		    <i class="fa fa-clock-o"></i> 发表于 {{.PublicTime | datetime}}
+	        &nbsp;|&nbsp;
 
-			<i class="fa fa-clock-o"></i> {{.PublicTime | datetime}}
-			&nbsp;&nbsp;
-			<span class="fa fa-eye"></span> {{.ReadNum}}
-			&nbsp;&nbsp;
-			<span class="fa fa-thumbs-o-up"></span> {{.LikeNum}}
-			<!--&nbsp;&nbsp;-->
-			<!--<span class="fa fa-comments-o"></span> {{.CommentNum}}-->
-		</div>
+	        <span class="fa fa-eye"></span> 热度 {{.ReadNum}} ℃
+	        &nbsp;|&nbsp;
+	        <span class="fa fa-thumbs-o-up"></span> 点赞 {{.LikeNum}}
+	        &nbsp;|&nbsp;
+	        {{if .Tags}}
+		        <i class="fa fa-bookmark-o"></i> {{blogTags $ .Tags}}
+	        {{end}}
+        </div>
+		
 		<div class="desc">
 			{{.Desc | raw}}
 		</div>
 		<div id="moreContainer">
-		    <a class="more" href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">查看</a>
+		    <a class="more" href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">阅读全文</a>
         </div>
 	</div>
 {{else}}

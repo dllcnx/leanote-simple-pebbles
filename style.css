@@ -699,8 +699,9 @@ pre { word-break: normal;word-wrap: normal;overflow: scroll; }
 }
 
 #blogNav{
-  right: 10px  !important;
+  right: calc(5% - 20px) !important;
   transform: translateX(-50px);
+  left: unset !important;
 }
 #blogNavContent{
   background: #333333;
@@ -770,4 +771,29 @@ pre { word-break: normal;word-wrap: normal;overflow: scroll; }
 .my_post_copyright .copy-path:hover {
   color: #808080;
   cursor: pointer;
+}
+
+.created-time,
+.created-time .fa{
+    color: #999999;
+    font-size: 12px;
+}
+body{
+    min-height: 100vh;
+}
+.context .each-post {
+  width: 90%;
+  margin: 10px auto;
+}
+.context .each-post .title {
+  text-align: center;
+}
+.context .each-post .created-time {
+  text-align: center;
+}
+.context .each-post .desc{
+    box-shadow: 0 0 20px rgba(0,0,0,.15);
+    transition: box-shadow .3s;
+    padding: 0 5% 5%;
+}
 }

@@ -1,25 +1,21 @@
 {{template "header.html" .}}
 
 <div id="postsContainer">
-	<div id="posts">
+	<div id="posts" class="context">
 		<div class="each-post">
 			<div class="title">
 				{{.post.Title}}
 			</div>
 			<div class="created-time">
+				<i class="fa fa-clock-o"></i> 发表于 {{$.post.PublicTime | datetime}}
+				&nbsp;|&nbsp;
+				<span class="fa fa-eye"></span> 热度 {{$.post.ReadNum}} ℃
+				&nbsp;|&nbsp;
+				<span class="fa fa-thumbs-o-up"></span> 点赞 {{$.post.LikeNum}}
+				&nbsp;|&nbsp;
 				{{if $.post.Tags}}
-				<i class="fa fa-bookmark-o"></i>
-				{{blogTags $ $.post.Tags}}
-				&nbsp;&nbsp;
+				    <i class="fa fa-bookmark-o"></i> {{blogTags $ $.post.Tags}}
 				{{end}}
-
-				<i class="fa fa-clock-o"></i> {{$.post.PublicTime | datetime}}
-				&nbsp;&nbsp;
-				<span class="fa fa-eye"></span> {{$.post.ReadNum}}
-				&nbsp;&nbsp;
-				<span class="fa fa-thumbs-o-up"></span> {{$.post.LikeNum}}
-				<!--&nbsp;&nbsp;-->
-				<!--<span class="fa fa-comments-o"></span> {{$.post.CommentNum}}-->
 			</div>
 
 			<!-- 仅为移动端 -->
