@@ -12,6 +12,9 @@
 * Version 主题版本
 * Author 主题的作者
 * AuthorUrl 作者的博客链接或相关链接
+* github github角标跳转
+* Postend 文章结束标记，默认打开为trun
+* copyright：文章结尾版权信息，默认打开为trun
 
 * FriendLinks 友情链接
 
@@ -34,6 +37,9 @@
   "Version": "1.0",
   "Author": "myllcn.com",
   "AuthorUrl": "http://myllcn.com",
+  "github": "https://github.com/KeiferJu",
+  "Postend": true,
+  "copyright": true,
   "FriendLinks": [
     {"Title": "我的官网", "Url": "http://myllcn.com"},
     {"Title": "我的博客", "Url": "http://blog.myllcn.com"},
@@ -48,6 +54,7 @@
     "admin": ["xxx"]
   },
   "music": [
-    {"name":"RightNow","artist":"RightNow","url":"http://blog.myllcn.com/music/RightNow.mp3","cover":""}
+    {"name":"RightNow","artist":"RightNow","url":"http://blog.myllcn.com/music/RightNow.mp3","cover":""},
+    {"name":"怒放的生命","artist":"汪峰","url":"http://link.hhtjim.com/qq/001faIUs4M2zna.mp3","cover":""}
   ]
 }
