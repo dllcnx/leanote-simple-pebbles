@@ -15,6 +15,7 @@
 * github github角标跳转
 * Postend 文章结束标记，默认打开为trun
 * copyright：文章结尾版权信息，默认打开为trun
+* canvasBg: 打开canvas背景，默认打开true
 
 * FriendLinks 友情链接
 
@@ -40,6 +41,7 @@
   "github": "https://github.com/KeiferJu",
   "Postend": true,
   "copyright": true,
+  "canvasBg": true,
   "FriendLinks": [
     {"Title": "我的官网", "Url": "http://myllcn.com"},
     {"Title": "我的博客", "Url": "http://blog.myllcn.com"},
