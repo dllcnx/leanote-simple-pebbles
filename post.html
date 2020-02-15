@@ -7,61 +7,71 @@
 				{{.post.Title}}
 			</div>
 			<div class="created-time">
+				{{if $.post.Tags}}
 				<i class="fa fa-bookmark-o"></i>
-    			{{if $.post.Tags}} 
-    				{{blogTags $ $.post.Tags}}
-    			{{else}}
-    				无
-    			{{end}}
-    			&nbsp;&nbsp;
-    			<i class="fa fa-clock-o"></i> {{$.post.PublicTime | datetime}} 
-    			&nbsp;&nbsp;
-    			<span class="fa fa-eye"></span> {{$.post.ReadNum}}
-    			&nbsp;&nbsp;
-    			<span class="fa fa-thumbs-o-up"></span> {{$.post.LikeNum}}
-    			<!--&nbsp;&nbsp;-->
-    			<!--<span class="fa fa-comments-o"></span> {{$.post.CommentNum}}-->
+				{{blogTags $ $.post.Tags}}
+				&nbsp;&nbsp;
+				{{end}}
+
+				<i class="fa fa-clock-o"></i> {{$.post.PublicTime | datetime}}
+				&nbsp;&nbsp;
+				<span class="fa fa-eye"></span> {{$.post.ReadNum}}
+				&nbsp;&nbsp;
+				<span class="fa fa-thumbs-o-up"></span> {{$.post.LikeNum}}
+				<!--&nbsp;&nbsp;-->
+				<!--<span class="fa fa-comments-o"></span> {{$.post.CommentNum}}-->
 			</div>
-			
+
 			<!-- 仅为移动端 -->
 			<div class="mobile-created-time">
-			{{ if $.blogInfo.UserLogo}}
+				{{ if $.blogInfo.UserLogo}}
 				<img src="{{$.blogInfo.UserLogo}}" id="userLogo">
-			{{else}}
+				{{else}}
 				<img src="{{$.siteUrl}}/images/blog/default_avatar.png" id="userLogo">
-			{{end}}
-			{{$.blogInfo.Username}}
-	
-			{{if .post.Tags}}
+				{{end}}
+				{{$.blogInfo.Username}}
+
+				{{if .post.Tags}}
 				&nbsp;
 				<i class="fa fa-bookmark-o" style="color: #666"></i>
 				{{blogTags $ $.post.Tags}}
-			{{end}}
-			</div>
-			
-			<div class="desc" id="content">
-				{{if $.post.IsMarkdown }}
-					<div id="markdownContent" style="display: none">
-						<!-- 用textarea装html, 防止得到的值失真 -->
-						<textarea>{{$.post.Content | raw}}</textarea>
-					</div>
-					<div style="padding: 20px; text-align: center">
-						<img src="{{$.themeBaseUrl}}/images/loading-32.gif" />
-					</div>
-				{{else}}
-						{{$.post.Content | raw}}
 				{{end}}
 			</div>
-			
-		    <div class="pre-next-post">
-		        <p>
-			    上一篇: {{if $.prePost}}<a href="{{$.postUrl}}/{{$.prePost.UrlTitle}}">{{$.prePost.Title}}</a>{{else}}无{{end}}
-                </p>
-                <p>
-                下一篇: {{if $.nextPost}}<a href="{{$.postUrl}}/{{$.nextPost.UrlTitle}}">{{$.nextPost.Title}}</a>{{else}}无{{end}}
-			    </p>
+
+			<div class="desc" id="content">
+				{{if $.post.IsMarkdown }}
+				<div id="markdownContent" style="display: none">
+					<!-- 用textarea装html, 防止得到的值失真 -->
+					<textarea>{{$.post.Content | raw}}</textarea>
+				</div>
+				<div style="padding: 20px; text-align: center">
+					<img src="{{$.themeBaseUrl}}/images/loading-32.gif" />
+				</div>
+				{{else}}
+				{{$.post.Content | raw}}
+				{{end}}
 			</div>
-			
+
+			<!-- end -->
+			{{if .themeInfo.Postend}}
+			{{template "post_end.html" $}}
+			{{end}}
+
+			<!--copyright -->
+			{{if .themeInfo.copyright}}
+			{{template "copyright.html" $}}
+			{{end}}
+
+
+			<div class="pre-next-post">
+				<p>
+					上一篇: {{if $.prePost}}<a href="{{$.postUrl}}/{{$.prePost.UrlTitle}}">{{$.prePost.Title}}</a>{{else}}无{{end}}
+				</p>
+				<p>
+					下一篇: {{if $.nextPost}}<a href="{{$.postUrl}}/{{$.nextPost.UrlTitle}}">{{$.nextPost.Title}}</a>{{else}}无{{end}}
+				</p>
+			</div>
+
 			<!-- share & comment -->
 			{{template "share_comment.html" $}}
 		</div>
@@ -84,12 +94,12 @@
 
 <!-- 一些在share_comment.js 需要使用的变量 -->
 <script>
-var siteUrl = "{{$.siteUrl}}"; // common.js需要
-// 以下 share_comment.js需要
-var blogInfo={UserId: "{{$.blogInfo.UserId}}", OpenComment: {{$.blogInfo.OpenComment}}, CommentType: "{{$.blogInfo.CommentType}}"}; 
-var noteId = "{{$.post.NoteId}}"; // 
-var preLikeNum = +"{{$.post.LikeNum}}";
-var commentNum = +"{{$.post.CommentNum}}";
+	var siteUrl = "{{$.siteUrl}}"; // common.js需要
+	// 以下 share_comment.js需要
+	var blogInfo={UserId: "{{$.blogInfo.UserId}}", OpenComment: {{$.blogInfo.OpenComment}}, CommentType: "{{$.blogInfo.CommentType}}"};
+	var noteId = "{{$.post.NoteId}}"; //
+	var preLikeNum = +"{{$.post.LikeNum}}";
+	var commentNum = +"{{$.post.CommentNum}}";
 </script>
 
 <!-- 共享与评论css -->
@@ -103,27 +113,27 @@ var commentNum = +"{{$.post.CommentNum}}";
 <!-- share && comment -->
 <script src="{{$.shareCommentJsUrl}}"></script>
 
-<!-- 
-markdown 
+<!--
+markdown
 调用markdown来解析得到html
 -->{{if $.post.IsMarkdown }}
 <script src="/public/libs/md2html/md2html.js"></script>
 <script>
-var content = $.trim($("#markdownContent textarea").val());
-md2Html(content, $("#content"), function(html) {
-    $("pre").addClass("prettyprint linenums");
-    prettyPrint();
-    initNav();
-    weixin();
-});
+	var content = $.trim($("#markdownContent textarea").val());
+	md2Html(content, $("#content"), function(html) {
+		$("pre").addClass("prettyprint linenums");
+		prettyPrint();
+		initNav();
+		weixin();
+	});
 </script>
 <!-- 不是markdown -->
 {{else}}
 <script>
-$(function() {
-	initNav();
-	weixin();
-});
+	$(function() {
+		initNav();
+		weixin();
+	});
 </script>
 {{end}}
 

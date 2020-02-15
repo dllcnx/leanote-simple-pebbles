@@ -6,13 +6,13 @@
 			</a>
 		</div>
 		<div class="created-time">
-			<i class="fa fa-bookmark-o"></i>
-			{{if .Tags}} 
+			{{if .Tags}}
+				<i class="fa fa-bookmark-o"></i>
 				{{blogTags $ .Tags}}
 				&nbsp;&nbsp;
 			{{end}}
-			
-			<i class="fa fa-clock-o"></i> {{.PublicTime | datetime}} 
+
+			<i class="fa fa-clock-o"></i> {{.PublicTime | datetime}}
 			&nbsp;&nbsp;
 			<span class="fa fa-eye"></span> {{.ReadNum}}
 			&nbsp;&nbsp;
@@ -25,7 +25,7 @@
 		</div>
 		<div id="moreContainer">
 		    <a class="more" href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">查看</a>
-        </div>	
+        </div>
 	</div>
 {{else}}
 <div class="each-post">
