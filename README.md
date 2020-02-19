@@ -1,6 +1,6 @@
 # leanote-simple-pebbles
 
-[观看效果](http://note.myllcn.com/preview?themeId=5e477b63c8b2ff000c000069)
+[观看效果](http://weblog.myllcn.com/)
 
 根据官方主题市场生活的simple-pebbles进行修改，原主题字体大小等等都进行太大，总感觉不舒服，进行了样式微调。替换了官方disqus评论系统为gittalk，因为一些原因，Disqus国内无法使用，但是又懒得去翻，就用了基于git的gittalk。
 
@@ -34,6 +34,7 @@
 * github github角标跳转
 * Postend 文章结束标记，默认打开为trun
 * copyright：文章结尾版权信息，默认打开为trun
+* canvasBg: 打开canvas背景，默认关闭false
 
 * FriendLinks 友情链接
 
@@ -59,6 +60,7 @@
   "github": "https://github.com/KeiferJu",
   "Postend": true,
   "copyright": true,
+  "canvasBg": false,
   "FriendLinks": [
     {"Title": "我的官网", "Url": "http://myllcn.com"},
     {"Title": "我的博客", "Url": "http://blog.myllcn.com"},
@@ -66,11 +68,11 @@
     {"Title": "Github", "Url": "https://github.com/KeiferJu"}
   ],
   "gitalk": {
-    "clientID": "b76c9107e35a12bee4f2",
-    "clientSecret": "62d8dbc028003efa3e44c982f2d758cff743508d",
-    "repo": "KeiferJu.github.io",
-    "owner": "KeiferJu",
-    "admin": ["KeiferJu"]
+    "clientID": "xxx",
+    "clientSecret": "xxx",
+    "repo": "xxx",
+    "owner": "xxx",
+    "admin": ["xxx"]
   },
   "music": [
     {"name":"RightNow","artist":"RightNow","url":"http://blog.myllcn.com/music/RightNow.mp3","cover":""},
