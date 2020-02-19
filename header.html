@@ -42,8 +42,9 @@ function log(o) {
 </style>
 </head>
 <body>
+<div class="header"></div>
 {{if $.themeInfo.canvasBg}}
-<script type="text/javascript" opacity='0.7' zIndex="-2" count="249" src="{{$.themeBaseUrl}}/lib/canvas-nest.js"></script>
+<script type="text/javascript" color="{{$.themeInfo.canvasBg}}" opacity='0.7' zIndex="-2" count="249" src="{{$.themeBaseUrl}}/lib/canvas-nest.js"></script>
 {{end}}
 {{if or $.curIsPost $.curIsSingle}}
 <div class="clearfix">
@@ -127,3 +128,4 @@ function log(o) {
 	  </div>
 	</div>
 </div>
+{{template "goto_top.html" $}}

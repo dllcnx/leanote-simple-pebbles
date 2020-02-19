@@ -1,0 +1,26 @@
+<div class="back_top">
+    <img src="{{$.themeBaseUrl}}/images/rocket.png" alt="返回顶部" title="返回顶部">
+</div>
+<script src="{{$.jQueryUrl}}"></script>
+<script>
+    $(function () {
+        // 获取要大于的高度
+        var headheight = $('.header').height();
+
+        window.addEventListener("scroll", function () {
+            //获取浏览器滚轴滚动的距离
+            var scrollTop = $(window).scrollTop();
+            console.log(scrollTop)
+            //当浏览器滚轴滚动的距离 大于 设定的高度时 显示“点击返回顶部”按钮，否则隐藏
+            if(scrollTop > headheight) {
+                $('.back_top').show()
+            } else {
+                $('.back_top').hide()
+            }
+        })
+        //点击返回顶部500ms的滑动效果
+        $('.back_top').on('click',function () {
+            $('html,body').animate({scrollTop:0},500);
+        })
+    })
+</script>

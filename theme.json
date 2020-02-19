@@ -15,7 +15,7 @@
 * github github角标跳转
 * Postend 文章结束标记，默认打开为trun
 * copyright：文章结尾版权信息，默认打开为trun
-* canvasBg: 打开canvas背景，默认关闭false
+* canvasBg: canvas背景(R,G,B)，默认'0,0,0'; 关闭动画背景false。
 
 * FriendLinks 友情链接
 

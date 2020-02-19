@@ -796,4 +796,51 @@ body{
     transition: box-shadow .3s;
     padding: 0 5% 5%;
 }
+.llcn-card{
+  box-shadow: 0 0 5px rgba(0,0,0,.15);
+  margin: 20px;
+}
+.llcn-card:hover{
+  box-shadow: 0 0 30px rgba(0,0,0,.15);
+  transition: box-shadow .3s;
+  transition: transform .3s;
+  transform: scale(1.01);
+}
+.llcn-desc-img{
+  height: 180px;
+}
+.desc-left{
+  width: 60%;
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.desc-right{
+  width: 38%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+.desc-right img{
+  height: 100%;
+}
+
+.back_top{
+  position: fixed;
+  right:1.5rem;
+  bottom:3rem;
+  z-index: 9999;
+  display: none;
+  /*background-color:white;*/
+  font-size: 0;
+  border-radius: 0.1rem;
+  /*height: 30px;*/
+  /*width: 30px;*/
+}
+.back_top img{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
