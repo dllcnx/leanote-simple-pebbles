@@ -10,6 +10,7 @@
 请在此解析所有配置
 * Name 主题名
 * Version 主题版本
+* Desc  主页描述
 * Author 主题的作者
 * AuthorUrl 作者的博客链接或相关链接
 * github github角标跳转
@@ -36,7 +37,8 @@
 {
   "Name": "dllcn-simple-pebbles",
   "Version": "1.0",
-  "Author": "myllcn.com",
+  "Desc": "欲穷大地三千界，须上高峰八百盘。",
+  "Author": "KeiferJu",
   "AuthorUrl": "http://myllcn.com",
   "github": "https://github.com/KeiferJu",
   "Postend": true,
