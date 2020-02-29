@@ -56,7 +56,7 @@
     "admin": ["xxx"]
   },
   "music": [
-    {"name":"RightNow","artist":"RightNow","url":"http://blog.myllcn.com/music/RightNow.mp3","cover":""},
+    {"name":"RightNow","artist":"RightNow","url":"http://www.myllcn.com/dassets/music/RightNow.mp3","cover":""},
     {"name":"怒放的生命","artist":"汪峰","url":"http://link.hhtjim.com/qq/001faIUs4M2zna.mp3","cover":""}
   ]
 }

@@ -2,6 +2,11 @@
 <script src="{{$.bootstrapJsUrl}}"></script>
 <script src="{{$.siteUrl}}/js/bootstrap-hover-dropdown.js"></script>
 <script>
+// {{if $.curIsCate}}
+//     $('#postsContainer')[0].style.marginLeft = '10px';
+//     $('#headerAndNav')[0].style.width = '0';
+//     $('#llcn-menu')[0].style.left = '20px';
+// {{end}}
 // 搜索
 function search(e) {
 	var keywords = $("#searchInput").val();
@@ -16,5 +21,18 @@ function search(e) {
 		$tpl.submit();
 		$tpl.remove(); 
 	}
+}
+
+function switchPanel(e){
+    const wd = $('#headerAndNav').width();
+    if(wd === 0){
+        $('#postsContainer')[0].style.marginLeft = '260px';
+        $('#headerAndNav')[0].style.width = '250px';
+        $('#llcn-menu')[0].style.left = '270px';
+    }else{
+        $('#postsContainer')[0].style.marginLeft = '10px';
+        $('#headerAndNav')[0].style.width = '0';
+        $('#llcn-menu')[0].style.left = '20px';
+    }
 }
 </script>
