@@ -2,6 +2,8 @@
 <div class="container cate">
 {{if $.curIsCate}}
 	<h1  id="text3d"  class="text3d">{{$.curCateTitle}}</h2>
+{{else if $.curTag}}
+    <h1  id="text3d"  class="text3d">{{$.curTag}}</h2>
 {{else}}
     <h1  id="text3d"  class="text3d"></h2>
 {{end}}
