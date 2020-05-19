@@ -1,41 +1,43 @@
 {{template "home.html" $}}
 {{range $.posts}}
-<div class="each-post llcn-card">
-	<div class="title">
-		<a href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">
-			{{.Title}}
-		</a>
-	</div>
+	<div class="each-post llcn-card">
+		<div class="title">
+			<a href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">
+				{{.Title}}
+			</a>
+		</div>
+		
+		<div class="created-time">
+		    <i class="fa fa-clock-o"></i> 发表于 {{.PublicTime | datetime}}
+	        &nbsp;|&nbsp;
 
-	<div class="created-time">
-		<i class="fa fa-clock-o"></i> 发表于 {{.PublicTime | datetime}}
-		&nbsp;|&nbsp;
-
-		<span class="fa fa-eye"></span> 热度 {{.ReadNum}} ℃
-		&nbsp;|&nbsp;
-		<span class="fa fa-thumbs-o-up"></span> 点赞 {{.LikeNum}}
-		&nbsp;|&nbsp;
-		{{if .Tags}}
-		<i class="fa fa-bookmark-o"></i> {{blogTags $ .Tags}}
-		{{end}}
-	</div>
-
-	<div class="desc">
+	        <span class="fa fa-eye"></span> 热度 {{.ReadNum}} ℃
+	        &nbsp;|&nbsp;
+	        <!--<span class="fa fa-thumbs-o-up"></span> 点赞 {{.LikeNum}}-->
+	        <!--&nbsp;|&nbsp;-->
+	        {{if .Tags}}
+		        <i class="fa fa-bookmark-o"></i> {{blogTags $ .Tags}}
+		    {{else}}
+				<i class="fa fa-bookmark-o"></i> 未知
+	        {{end}}
+        </div>
+		
+		<div class="desc">
 		{{if .ImgSrc}}
 		<div class="llcn-desc-img">
-			<span class="desc-left">{{.Desc | raw}}</span>
+		    <span class="desc-left">{{.Desc | raw}}</span>
 			<div class="desc-right"><img src="{{.ImgSrc}}"></div>
 		</div>
 		{{else}}
-		{{.Desc | raw}}
+		    {{.Desc | raw}}
 		{{end}}
+		</div>
+		<div id="moreContainer">
+		    <a class="more" href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">阅读全文</a>
+        </div>
 	</div>
-	<div id="moreContainer">
-		<a class="more" href="{{$.postUrl}}/{{.UrlTitle}}" title="全文">阅读全文</a>
-	</div>
-</div>
 {{else}}
 <div class="each-post">
-	<!--无-->
+<!--无-->
 </div>
 {{end}}

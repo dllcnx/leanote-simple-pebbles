@@ -1,11 +1,13 @@
 <i id="llcn-menu" class="fa fa-align-justify" onclick="switchPanel()"></i>
 <div class="container cate">
 {{if $.curIsCate}}
-	<h1  id="text3d"  class="text3d">{{$.curCateTitle}}</h2>
+	<h1  id="text3d"  class="text3d">{{$.curCateTitle}}</h1>
 {{else if $.curTag}}
-    <h1  id="text3d"  class="text3d">{{$.curTag}}</h2>
+    <h1  id="text3d"  class="text3d">{{$.curTag}}</h1>
 {{else}}
-    <h1  id="text3d"  class="text3d"></h2>
+    <h1  id="text3d"  class="text3d"></h1>
 {{end}}
-	<h2 class="dllcn-font">{{$.themeInfo.Desc}}</h4>
+	<h2 class="dllcn-font">	{{template "desc.html"}}</h2>
+
 </div>
+	

@@ -5,11 +5,11 @@
           <h3>导航</h3>
           <ul>
           	<li><a href="{{$.indexUrl}}">主页</a></li>
-          	{{range $.cates}}
-			<li>
-				<a href="{{$.cateUrl}}/{{.UrlTitle}}">{{.Title}}</a>
-			</li>
-			{{end}}
+   <!--       	{{range $.cates}}-->
+			<!--<li>-->
+			<!--	<a href="{{$.cateUrl}}/{{.UrlTitle}}">{{.Title}}</a>-->
+			<!--</li>-->
+			<!--{{end}}-->
 
 			<!-- 归档 -->
 			<li class="{{if $.curIsArchive}}active{{end}}">
@@ -47,7 +47,6 @@
         </div>
     </div>
     <div class="footer-leanote">Proudly powered by <a href="https://myllcn.com">dllcn</a></div>
-
 </div>
 <script src="{{$.jQueryUrl}}"></script>
 <script src="{{$.bootstrapJsUrl}}"></script>

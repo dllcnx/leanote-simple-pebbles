@@ -11,10 +11,12 @@
 				&nbsp;|&nbsp;
 				<span class="fa fa-eye"></span> 热度 {{$.post.ReadNum}} ℃
 				&nbsp;|&nbsp;
-				<span class="fa fa-thumbs-o-up"></span> 点赞 {{$.post.LikeNum}}
-				&nbsp;|&nbsp;
+				<!--<span class="fa fa-thumbs-o-up"></span> 点赞 {{$.post.LikeNum}}-->
+				<!--&nbsp;|&nbsp;-->
 				{{if $.post.Tags}}
 				    <i class="fa fa-bookmark-o"></i> {{blogTags $ $.post.Tags}}
+				{{else}}
+				    <i class="fa fa-bookmark-o"></i> 未知
 				{{end}}
 			</div>
 

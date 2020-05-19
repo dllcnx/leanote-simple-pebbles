@@ -1,22 +1,3 @@
-# leanote-simple-pebbles
-
-[观看效果](http://weblog.myllcn.com/)
-
-根据官方主题市场生活的simple-pebbles进行修改，原主题字体大小等等都进行太大，总感觉不舒服，进行了样式微调。替换了官方disqus评论系统为gittalk，因为一些原因，Disqus国内无法使用，但是又懒得去翻，就用了基于git的gittalk。
-
-![1](./images/screenshot.png)
-
-相关配置说明:
-1. 如果要启动gittalk评论，首先需要将你的博客设置评论选择Disqus方式，id随意，用不到了。然后在themem.json里面gitalk的对应位置填写你申请的github OAuth Apps相关信息。
-
-![2](lib/gitalk.png)
-
-2. 如果要启用音乐单页，需要在你的博客设置里面添加一个单页，并将路由命名为music。然后可以在theme.json文件中添加自己想要的音乐。
-![3](./lib/music1.png)
-
-
-具体配置:
-```
 /*
 以下是本主题的配置, 采用JSON格式
 其中Name, Version, Author, AuthorUrl是必填项(注意首字大写)
@@ -34,7 +15,6 @@
 * github github角标跳转
 * Postend 文章结束标记，默认打开为trun
 * copyright：文章结尾版权信息，默认打开为trun
-* canvasBg: 打开canvas背景，默认关闭false
 
 * FriendLinks 友情链接
 
@@ -60,7 +40,6 @@
   "github": "https://github.com/KeiferJu",
   "Postend": true,
   "copyright": true,
-  "canvasBg": false,
   "FriendLinks": [
     {"Title": "我的官网", "Url": "http://myllcn.com"},
     {"Title": "我的博客", "Url": "http://blog.myllcn.com"},
@@ -68,16 +47,14 @@
     {"Title": "Github", "Url": "https://github.com/KeiferJu"}
   ],
   "gitalk": {
-    "clientID": "xxx",
-    "clientSecret": "xxx",
-    "repo": "xxx",
-    "owner": "xxx",
-    "admin": ["xxx"]
+    "clientID": "XXX",
+    "clientSecret": "XXX",
+    "repo": "XX",
+    "owner": "XXX",
+    "admin": ["XXX"]
   },
   "music": [
     {"name":"RightNow","artist":"RightNow","url":"http://blog.myllcn.com/music/RightNow.mp3","cover":""},
     {"name":"怒放的生命","artist":"汪峰","url":"http://link.hhtjim.com/qq/001faIUs4M2zna.mp3","cover":""}
   ]
 }
-```
-

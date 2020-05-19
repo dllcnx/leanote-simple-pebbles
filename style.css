@@ -328,7 +328,7 @@ a:hover {
 }
 #postsContainer .container {
   /*margin-left: 12px;*/
-  padding-left: 50px;
+      padding-left: 50px;
 }
 /* header */
 #header {
@@ -884,7 +884,7 @@ body{
     transition: margin-left .5s;
 }
 #footerContainer {
-  transition: margin-left .5s;
+    transition: margin-left .5s;
 }
 .dllcn-font {
     display: block;
